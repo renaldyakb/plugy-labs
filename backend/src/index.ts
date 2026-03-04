@@ -19,7 +19,7 @@ app.use(
 );
 
 app.get("/", (c) => {
-  return c.text("Hono backend is running. Go to /api/v1/hello for tRPCs.");
+  return c.text("Go to /api/v1/hello");
 });
 
 serve(app, () => {

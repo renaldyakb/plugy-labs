@@ -9,4 +9,11 @@ export const helloRouter = router({
         greeting: `Hello ${input?.text ?? "World"} from tRPC!`,
       };
     }),
+  health: rateLimitedProcedure.query(() => {
+    return {
+      status: "OK",
+      uptime: process.uptime(),
+      timestamp: new Date().toISOString(),
+    };
+  }),
 });
