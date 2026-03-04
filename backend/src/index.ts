@@ -8,7 +8,26 @@ import { appRouter } from "./routers/index.js";
 const app = new Hono();
 
 app.use("*", logger());
-app.use("*", cors());
+app.use(
+  "*",
+  cors({
+    origin: (origin) => {
+      // In development, allow localhost/local network
+      if (process.env.NODE_ENV === "development") {
+        return origin;
+      }
+      // In production, strictly enforce allowed origins via ENV
+      // Example .env: ALLOWED_ORIGINS=https://plugy-labs.web.app,https://my-domain.com
+      const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [];
+
+      if (origin && allowedOrigins.includes(origin)) {
+        return origin;
+      }
+      // Fallback
+      return allowedOrigins[0] || "http://localhost:5173";
+    },
+  }),
+);
 
 // Mount tRPC router
 app.use(

@@ -57,7 +57,7 @@ function Index() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            All Systems Operational
+            All Systems Operational kakrey
           </span>
         ) : (
           <span className="flex items-center gap-1.5 text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/50 px-2 py-1 rounded-full border border-rose-200 dark:border-rose-800 shadow-sm">

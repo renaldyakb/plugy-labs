@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { router, rateLimitedProcedure } from "../trpc.js";
+import { router, rateLimitedProcedure, publicProcedure } from "../trpc.js";
 
 export const helloRouter = router({
   greeting: rateLimitedProcedure
@@ -9,7 +9,7 @@ export const helloRouter = router({
         greeting: `Hello ${input?.text ?? "World"} from tRPC!`,
       };
     }),
-  health: rateLimitedProcedure.query(() => {
+  health: publicProcedure.query(() => {
     return {
       status: "OK",
       uptime: process.uptime(),
