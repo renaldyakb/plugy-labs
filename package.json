@@ -1,0 +1,20 @@
+{
+  "name": "plugy-labs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all -p -l dev:*",
+    "dev:backend": "pnpm --filter backend run dev",
+    "dev:frontend": "pnpm --filter frontend run dev",
+    "build": "npm-run-all -s build:*",
+    "build:backend": "pnpm --filter backend run build",
+    "build:frontend": "pnpm --filter frontend run build",
+    "typecheck": "npm-run-all -p typecheck:*",
+    "typecheck:backend": "pnpm --filter backend run typecheck",
+    "typecheck:frontend": "pnpm --filter frontend run typecheck",
+    "install:all": "pnpm install"
+  },
+  "devDependencies": {
+    "npm-run-all2": "^7.0.2"
+  }
+}
