@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hono/node-server':
+        specifier: ^1.19.10
+        version: 1.19.10(hono@4.12.5)
       hono:
         specifier: ^4.12.5
         version: 4.12.5
@@ -180,6 +183,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@hono/node-server@1.19.10':
+    resolution: {integrity: sha512-hZ7nOssGqRgyV3FVVQdfi+U4q02uB23bpnYpdvNXkYTRRyWx84b7yf1ans+dnJ/7h41sGL3CeQTfO+ZGxuO+Iw==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: ^4
+
   '@types/node@20.19.35':
     resolution: {integrity: sha512-Uarfe6J91b9HAUXxjvSOdiO2UPOKLm07Q1oh0JHxoZ1y8HoqxDAu3gVrsrOHeiio0kSsoVBt4wFrKOm0dKxVPQ==}
 
@@ -295,6 +304,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.3':
     optional: true
+
+  '@hono/node-server@1.19.10(hono@4.12.5)':
+    dependencies:
+      hono: 4.12.5
 
   '@types/node@20.19.35':
     dependencies:
